@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 185, 7, 25)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -84,7 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text('Teste de Hiperatividade',
+        style: TextStyle(color: Color.fromARGB(255, 112, 2, 55), fontSize: 24, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -106,11 +108,12 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'De 1 à 10 me mostre o quão hiperativo você é:',
+              style: TextStyle(color: Color.fromARGB(255, 112, 2, 55), fontSize: 24, fontWeight: FontWeight.bold), textAlign:TextAlign.center,
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
         ),
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.plus_one),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
